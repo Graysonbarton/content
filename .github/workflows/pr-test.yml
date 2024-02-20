@@ -11,7 +11,7 @@ on:
   # is granted read/write repository access.
   # Please pay attention to limit the permissions of each job!
   # https://docs.github.com/actions/using-jobs/assigning-permissions-to-jobs
-  pull_request_target:
+  pull_request_target:1
     branches:
       - main
 
