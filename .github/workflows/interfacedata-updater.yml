@@ -22,7 +22,6 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version-file: "mdn-content/.nvmrc"
-          cache: yarn
 
       - name: Checkout webref
         uses: actions/checkout@v4
@@ -36,7 +35,7 @@ jobs:
         run: node scripts/update-interface-data.js ../webref/
 
       - name: Create pull request
-        uses: peter-evans/create-pull-request@v6
+        uses: peter-evans/create-pull-request@v7
         with:
           path: mdn-content
           token: ${{ secrets.AUTOMERGE_TOKEN }}
