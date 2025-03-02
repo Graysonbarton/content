@@ -9,38 +9,44 @@ browser-compat: html.elements.progress
 
 The **`<progress>`** [HTML](/en-US/docs/Web/HTML) element displays an indicator showing the completion progress of a task, typically displayed as a progress bar.
 
-{{EmbedInteractiveExample("pages/tabbed/progress.html", "tabbed-standard")}}
+{{InteractiveExample("HTML Demo: &lt;progress&gt;", "tabbed-standard")}}
+
+```html interactive-example
+<label for="file">File progress:</label>
+
+<progress id="file" max="100" value="70">70%</progress>
+```
+
+```css interactive-example
+label {
+  padding-right: 10px;
+  font-size: 1rem;
+}
+```
 
 ## Attributes
 
 This element includes the [global attributes](/en-US/docs/Web/HTML/Global_attributes).
 
-- `max`
+- [`max`](/en-US/docs/Web/HTML/Attributes/max)
   - : This attribute describes how much work the task indicated by the `progress` element requires. The `max` attribute, if present, must have a value greater than `0` and be a valid floating point number. The default value is `1`.
 - `value`
   - : This attribute specifies how much of the task that has been completed. It must be a valid floating point number between `0` and `max`, or between `0` and `1` if `max` is omitted. If there is no `value` attribute, the progress bar is indeterminate; this indicates that an activity is ongoing with no indication of how long it is expected to take.
 
-> **Note:** Unlike the {{htmlelement("meter")}} element, the minimum value is always 0, and the `min` attribute is not allowed for the `<progress>` element.
+> [!NOTE]
+> Unlike the {{htmlelement("meter")}} element, the minimum value is always 0, and the `min` attribute is not allowed for the `<progress>` element.
 
-> **Note:** The {{cssxref(":indeterminate")}} pseudo-class can be used to match against indeterminate progress bars. To change the progress bar to indeterminate after giving it a value you must remove the value attribute with {{domxref("Element.removeAttribute", "element.removeAttribute('value')")}}.
+> [!NOTE]
+> The {{cssxref(":indeterminate")}} pseudo-class can be used to match against indeterminate progress bars. To change the progress bar to indeterminate after giving it a value you must remove the value attribute with {{domxref("Element.removeAttribute", "element.removeAttribute('value')")}}.
 
-## Examples
-
-```html
-<progress value="70" max="100">70 %</progress>
-```
-
-### Result
-
-{{ EmbedLiveSample("Examples", 200, 50) }}
-
-## Accessibility concerns
+## Accessibility
 
 ### Labelling
 
 In most cases you should provide an accessible label when using `<progress>`. While you can use the standard ARIA labelling attributes [`aria-labelledby`](/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-labelledby) or [`aria-label`](/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-label) as you would for any element with `role="progressbar"`, when using `<progress>` you can alternatively use the {{htmlelement("label")}} element.
 
-> **Note:** Text placed between the element's tags is not an accessible label, it is only recommended as a fallback for old browsers that do not support this element.
+> [!NOTE]
+> Text placed between the element's tags is not an accessible label, it is only recommended as a fallback for old browsers that do not support this element.
 
 #### Examples
 
@@ -80,6 +86,16 @@ If the `<progress>` element is describing the loading progress of a section of a
 
 {{EmbedLiveSample('Describing a particular region')}}
 
+## Examples
+
+```html
+<progress value="70" max="100">70 %</progress>
+```
+
+### Result
+
+{{ EmbedLiveSample("Examples", 200, 50) }}
+
 ## Technical summary
 
 <table class="properties">
@@ -103,7 +119,7 @@ If the `<progress>` element is describing the loading progress of a section of a
     </tr>
     <tr>
       <th scope="row">Tag omission</th>
-      <td>{{no_tag_omission}}</td>
+      <td>None, both the starting and ending tag are mandatory.</td>
     </tr>
     <tr>
       <th scope="row">Permitted parents</th>
@@ -137,6 +153,7 @@ If the `<progress>` element is describing the loading progress of a section of a
 
 ## See also
 
+- [Creating vertical form controls](/en-US/docs/Web/CSS/CSS_writing_modes/Vertical_controls)
 - {{htmlelement("meter")}}
 - {{ cssxref(":indeterminate") }}
 - {{ cssxref("-moz-orient") }}

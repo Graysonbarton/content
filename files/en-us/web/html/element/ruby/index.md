@@ -11,7 +11,17 @@ The **`<ruby>`** [HTML](/en-US/docs/Web/HTML) element represents small annotatio
 
 The term _ruby_ originated as [a unit of measurement used by typesetters](<https://en.wikipedia.org/wiki/Agate_(typography)>), representing the smallest size that text can be printed on newsprint while remaining legible.
 
-{{EmbedInteractiveExample("pages/tabbed/ruby.html", "tabbed-shorter")}}
+{{InteractiveExample("HTML Demo: &lt;ruby&gt;", "tabbed-shorter")}}
+
+```html interactive-example
+<ruby> 明日 <rp>(</rp><rt>Ashita</rt><rp>)</rp> </ruby>
+```
+
+```css interactive-example
+ruby {
+  font-size: 2em;
+}
+```
 
 ## Attributes
 
@@ -70,7 +80,7 @@ This element only includes the [global attributes](/en-US/docs/Web/HTML/Global_a
     </tr>
     <tr>
       <th scope="row">Tag omission</th>
-      <td>{{no_tag_omission}}</td>
+      <td>None, both the starting and ending tag are mandatory.</td>
     </tr>
     <tr>
       <th scope="row">Permitted parents</th>
